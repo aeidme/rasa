@@ -10,6 +10,9 @@ COPY . /build/
 # change working directory
 WORKDIR /build
 
+# fix
+RUN sudo chmod -R 777 /opt/wpscan/.bundle
+
 # install dependencies
 RUN python -m venv /opt/venv && \
   . /opt/venv/bin/activate && \
